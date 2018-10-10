@@ -1,0 +1,57 @@
+.navbar {
+  height: 100%;
+  width: 60%;
+  max-width: 400px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  z-index: 200;
+  font-weight: bold;
+  font-size: 20px;
+  border-right: 1px solid grey;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in;
+  display: block;
+  text-align: center;
+}
+
+.navbar.slideNav {
+  transform: translateX(-100%);
+}
+
+.navbar .container-picture {
+  justify-content: center;
+}
+
+.list-container {
+  padding: 0;
+}
+
+.list-container li {
+  list-style-type: none;
+}
+
+.button-container .button {
+  cursor: pointer;
+}
+
+.icon-container i {
+  padding: 5px;
+  margin: 5px;
+  size: 10px;
+}
+
+/* for mobile phones */
+/* @media (max-width: 700px) {
+  #Sidebar {
+    display: none !important;
+  }
+} */
+
+@media (min-width: 701px) {
+  .navbar {
+    display: block !important;
+  }
+}

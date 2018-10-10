@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./style.css";
+import "./nav_style.css";
 
 // images import
 import Selfie from "../../Images/image_selfie.PNG";
@@ -11,36 +11,51 @@ class Navbar extends Component {
   }
 
   render() {
+    // sidebar
+
+    let navClasses =
+      "navbar slideNav navbar-collapse align-items-center flex-sm-column flex-row";
+    if (this.props.slideNav) {
+      navClasses =
+        "navbar navbar-collapse align-items-center flex-sm-column flex-row";
+    }
+
     return (
-      // Sidebar - Menu
-      <nav
-        className="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-center"
-        id="Sidebar"
-      >
-        <div className="container mt-5">
+      <nav className={navClasses}>
+        <div className="container mt-5 container-picture">
           <img src={Selfie} alt="selfie" />
         </div>
 
-        <div className="w3-bar-block">
-          <h1 className="w3-padding-64 w3-center">JOEY HUANG</h1>
-          <a href="#" className="w3-bar-item w3-button">
-            PORTFOLIO
-          </a>
-          <a href="#" className="w3-bar-item w3-button">
-            ABOUT ME
-          </a>
-          <a href="#" className="w3-bar-item w3-button">
-            CONTACT
+        <div className="list-container p-0 ">
+          <ul className="p-0">
+            <li className="title-name">
+              <h1 className="w3-padding-64 w3-center">JOEY HUANG</h1>
+            </li>
+            <li>
+              <a href="#" className="w3-bar-item w3-button">
+                PORTFOLIO
+              </a>
+            </li>
+            <li>
+              <a href="#" className="w3-bar-item w3-button">
+                ABOUT ME
+              </a>
+            </li>
+            <li>
+              <a href="#" className="w3-bar-item w3-button">
+                CONTACT
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="button-container mt-5 mb-3">
+          <a href="/CV/">
+            <button className="button">Curriculum Vitae</button>
           </a>
         </div>
 
-        <div className="container mt-5" id="button">
-          <button class="w3-button w3-grey w3-padding-large w3-margin-top w3-margin-bottom">
-            Curriculum Vitae
-          </button>
-        </div>
-
-        <div className="container" id="icons">
+        <div className="icon-container">
           <a href="www.twitter.com">
             <i className="fa fa-twitter w3-hover-opacity w3-xxlarge" />
           </a>

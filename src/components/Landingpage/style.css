@@ -4,10 +4,34 @@
   width: auto;
   margin-left: 400px;
   background-color: white;
+  overflow: hidden;
 }
 
-.landinglayout #header {
+.landinglayout > .container {
   font-weight: bold;
+  width: 100%;
+}
+
+.landinglayout > .container > .header-section {
+  text-align: center;
+  border-bottom: 8px solid lightgrey;
+}
+
+.header-section .row-title {
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-section .row-sub-title-2 {
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Toggler button */
+.row-title .nav-toggler {
+  height: 100%;
 }
 
 .landinglayout img {
@@ -22,7 +46,17 @@
   width: auto;
 }
 
+.landinglayout #row1 .container {
+  background-color: lightgrey;
+}
+
 .landinglayout #image_wrap1 {
+  position: relative;
+  height: auto;
+  width: auto;
+}
+
+.landinglayout .row-image {
   position: relative;
   height: auto;
   width: auto;
@@ -30,6 +64,7 @@
 
 .img_description {
   width: auto;
+  height: auto;
   position: absolute;
   top: 0;
   right: 0;
@@ -62,4 +97,22 @@ a:hover {
   margin-top: 50%;
   font-family: "Raleway", "sans-serif";
   font-size: 50px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .landinglayout {
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 701px) {
+  .row-title .nav-toggler {
+    display: none;
+  }
 }
