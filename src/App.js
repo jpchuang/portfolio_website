@@ -5,6 +5,8 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Landingpage from "./components/Landingpage/Landingpage";
 import Backdrop from "./components/Backdrop/Backdrop";
+import About from "./components/About/About";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   state = {
@@ -34,6 +36,8 @@ class App extends Component {
         <Navbar slideNav={this.state.navBarOpen} />;
         <Landingpage navClickHandler={this.navToggleClickHandler} />
         {backdrop}
+        <About />
+        <Footer />
       </div>
     );
   }

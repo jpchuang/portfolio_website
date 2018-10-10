@@ -1,0 +1,15 @@
+.container-about {
+  margin-left: 400px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.container-about > .row {
+  border-top: 8px solid lightgrey;
+}
+
+@media (max-width: 700px) {
+  .container-about {
+    margin-left: 0px;
+  }
+}
