@@ -10,3 +10,9 @@ body {
   font-family: "Raleway", "sans-serif";
   max-width: 1900px;
 }
+
+@media (max-width: 700px) {
+  .nav-side {
+    display: none;
+  }
+}

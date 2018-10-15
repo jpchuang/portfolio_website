@@ -1,17 +1,37 @@
 import React, { Component } from "react";
 import "./App.css";
-// import { BrowserRouter as Router } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Landingpage from "./components/Landingpage/Landingpage";
 import Backdrop from "./components/Backdrop/Backdrop";
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
+import Robotics from "./components/Pages/Robotics/Robotics";
+import Cyber from "./components/Pages/Cyber/Cyber";
+import Crypto from "./components/Pages/Crypto/Crypto";
 
 class App extends Component {
-  state = {
-    navBarOpen: true
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      navBarOpen: true,
+      isDesktop: false
+    };
+    this.updatePredicate = this.updatePredicate.bind(this);
+  }
+
+  componentDidMount() {
+    this.updatePredicate();
+    window.addEventListener("resize", this.updatePredicate);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updatePredicate);
+  }
+
+  updatePredicate() {
+    this.setState({ isDesktop: window.innerWidth > 1450 });
+  }
 
   navToggleClickHandler = () => {
     // nested functions, function in a setState function
@@ -25,6 +45,8 @@ class App extends Component {
   };
 
   render() {
+    const isDesktop = this.state.isDesktop;
+
     let backdrop;
 
     if (this.state.navBarOpen) {
@@ -32,12 +54,114 @@ class App extends Component {
     }
 
     return (
-      <div id="mainBody">
-        <Navbar slideNav={this.state.navBarOpen} />;
-        <Landingpage navClickHandler={this.navToggleClickHandler} />
-        {backdrop}
-        <About />
-        <Footer />
+      <div>
+        {isDesktop ? (
+          <Router>
+            <div id="mainBody">
+              <div className="nav-side">
+                <Navbar slideNav={this.state.navBarOpen} />;
+              </div>
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <div className="main-page">
+                      <Landingpage
+                        navClickHandler={this.navToggleClickHandler}
+                      />
+                      {backdrop}
+                      <About />
+                      <Footer />
+                    </div>
+                  )}
+                />
+              </Switch>
+              <Switch>
+                <Route
+                  path="/robotics/"
+                  render={() => (
+                    <div className="robotics-page">
+                      <Robotics />
+                    </div>
+                  )}
+                />
+              </Switch>
+              <Switch>
+                <Route
+                  path="/cyber/"
+                  render={() => (
+                    <div className="cyber-page">
+                      <Cyber />
+                    </div>
+                  )}
+                />
+              </Switch>
+              <Switch>
+                <Route
+                  path="/crypto/"
+                  render={() => (
+                    <div className="crypto-page">
+                      <Crypto />
+                    </div>
+                  )}
+                />
+              </Switch>
+            </div>
+          </Router>
+        ) : (
+          <Router>
+            <div id="mainBody">
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <div className="main-page">
+                      <Navbar slideNav={this.state.navBarOpen} />;
+                      <Landingpage
+                        navClickHandler={this.navToggleClickHandler}
+                      />
+                      {backdrop}
+                      <About />
+                      <Footer />
+                    </div>
+                  )}
+                />
+              </Switch>
+              <Switch>
+                <Route
+                  path="/robotics/"
+                  render={() => (
+                    <div className="robotics-page">
+                      <Robotics />
+                    </div>
+                  )}
+                />
+              </Switch>
+              <Switch>
+                <Route
+                  path="/cyber/"
+                  render={() => (
+                    <div className="cyber-page">
+                      <Cyber />
+                    </div>
+                  )}
+                />
+              </Switch>
+              <Switch>
+                <Route
+                  path="/crypto/"
+                  render={() => (
+                    <div className="crypto-page">
+                      <Crypto />
+                    </div>
+                  )}
+                />
+              </Switch>
+            </div>
+          </Router>
+        )}
       </div>
     );
   }

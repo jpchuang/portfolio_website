@@ -1,0 +1,9 @@
+.container-robotics {
+  margin-left: 400px;
+}
+
+@media (max-width: 700px) {
+  .container-robotics {
+    margin-left: 0px;
+  }
+}

@@ -35,12 +35,12 @@ class Landingpage extends Component {
               <h4>Aerospace &amp; Robotics Engineer</h4>
             </div>
 
-            <div className="row-sub-title-2">
+            {/* <div className="row-sub-title-2">
               <h5>
                 "If things are not failing, you are not innovating enough" -
                 Elon Musk
               </h5>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -76,7 +76,7 @@ class Landingpage extends Component {
 
           <div className="col-lg-4 mb-3" id="image_wrap2">
             <div className="row-image">
-              <a href="/Cybersecurity/">
+              <a href="/cyber/">
                 <img src={picture2} alt="wallpaper-cyber" />
 
                 <div className="img_description">

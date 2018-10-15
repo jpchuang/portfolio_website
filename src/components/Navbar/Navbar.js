@@ -23,7 +23,7 @@ class Navbar extends Component {
     return (
       <nav className={navClasses}>
         <div className="container mt-5 container-picture">
-          <img src={Selfie} alt="selfie" />
+          <img src="https://via.placeholder.com/200x200" alt="selfie" />
         </div>
 
         <div className="list-container p-0 ">

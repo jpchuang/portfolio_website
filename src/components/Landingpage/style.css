@@ -4,7 +4,7 @@
   width: auto;
   margin-left: 400px;
   background-color: white;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .landinglayout > .container {

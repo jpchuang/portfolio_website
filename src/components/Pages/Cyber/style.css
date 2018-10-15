@@ -1,0 +1,9 @@
+.container-cyber {
+  margin-left: 400px;
+}
+
+@media (max-width: 700px) {
+  .container-cyber {
+    margin-left: 0px;
+  }
+}

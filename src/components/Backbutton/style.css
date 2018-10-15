@@ -1,0 +1,14 @@
+.back-button {
+  background: transparent;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+}
+
+.back-button > i {
+  font-size: 45px;
+}
+
+.back-button:focus {
+  outline: none;
+}

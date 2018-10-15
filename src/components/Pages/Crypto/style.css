@@ -1,0 +1,9 @@
+.container-crypto {
+  margin-left: 400px;
+}
+
+@media (max-width: 700px) {
+  .container-crypto {
+    margin-left: 0px;
+  }
+}
