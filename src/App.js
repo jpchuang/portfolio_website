@@ -1,4 +1,14 @@
 import React, { Component } from "react";
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
+
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
@@ -118,7 +128,11 @@ class App extends Component {
                   path="/"
                   render={() => (
                     <div className="main-page">
-                      <Navbar slideNav={this.state.navBarOpen} />;
+                      <Navbar
+                        slideNav={this.state.navBarOpen}
+                        navClickHandler={this.navToggleClickHandler}
+                      />
+                      ;
                       <Landingpage
                         navClickHandler={this.navToggleClickHandler}
                       />

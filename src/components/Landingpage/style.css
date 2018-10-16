@@ -23,6 +23,11 @@
   justify-content: center;
 }
 
+.header-section .row-sub-title-1 > h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
 .header-section .row-sub-title-2 {
   font-style: italic;
   margin-top: 20px;

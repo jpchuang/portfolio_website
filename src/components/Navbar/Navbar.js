@@ -1,4 +1,13 @@
 import React, { Component } from "react";
+import * as Scroll from "react-scroll";
+import {
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
+import { Link } from "react-router-dom";
 
 import "./nav_style.css";
 
@@ -8,6 +17,11 @@ import Selfie from "../../Images/image_selfie.PNG";
 class Navbar extends Component {
   constructor(props) {
     super(props);
+  }
+
+  whenClicking(time) {
+    scroll.scrollTo(time);
+    this.props.navClickerHandler();
   }
 
   render() {
@@ -32,9 +46,17 @@ class Navbar extends Component {
               <h1 className="w3-padding-64 w3-center">JOEY HUANG</h1>
             </li>
             <li>
-              <a href="#" className="w3-bar-item w3-button">
+              <Link
+                activeClass="active"
+                className="w3-bar-item w3-button"
+                to=""
+                spy={true}
+                smooth="easeInOutQuart"
+                duration={1000}
+                onClick={() => this.whenClicking(500)}
+              >
                 PORTFOLIO
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="w3-bar-item w3-button">

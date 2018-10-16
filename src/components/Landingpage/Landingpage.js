@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import NavToggler from "../Navbar/NavTogglerButton";
 
@@ -13,7 +14,6 @@ class Landingpage extends Component {
       // Landingpage content
       <body className="landinglayout">
         {/* Header element */}
-
         <div className="container mb-4 mx-0" id="header">
           <div className="header-section">
             <div className="row row-title">
@@ -49,13 +49,13 @@ class Landingpage extends Component {
         <div className="row mx-auto" id="row1">
           <div className="col-lg-4 mb-3" id="image_wrap1">
             <div className="row-image">
-              <a href="/robotics/">
+              <Link to="/robotics/" className="robotics-grid">
                 <img src={picture1} alt="wallpaper-robotics" />
 
                 <div className="img_description">
                   <h3>Robotics </h3>
                 </div>
-              </a>
+              </Link>
             </div>
 
             <div className="row mx-auto">
@@ -76,13 +76,13 @@ class Landingpage extends Component {
 
           <div className="col-lg-4 mb-3" id="image_wrap2">
             <div className="row-image">
-              <a href="/cyber/">
+              <Link to="/cyber/" className="cyber-grid">
                 <img src={picture2} alt="wallpaper-cyber" />
 
                 <div className="img_description">
                   <h3>Cyber &amp; Network Security</h3>
                 </div>
-              </a>
+              </Link>
             </div>
 
             <div className="row mx-auto">
@@ -103,13 +103,13 @@ class Landingpage extends Component {
 
           <div className="col-lg-4 mb-3" id="image_wrap3">
             <div className="row-image">
-              <a href="/crypto/">
+              <Link to="/crypto/" className="crypto-grid">
                 <img src={picture3} alt="wallpaper-crypto" />
 
                 <div className="img_description">
                   <h3>Cryptocurrency &amp; Blockchain</h3>
                 </div>
-              </a>
+              </Link>
             </div>
 
             <div className="row mx-auto">
